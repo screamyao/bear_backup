@@ -11,7 +11,6 @@ This script will read the sqlite database and dump all of your notes into
 individual `.bearnote` files, which can be stored in somewhere like dropbox
 and imported back into bear directly.
 
-
 ## Installation
 
 The script requires python 3 to be installed, but doesn't require any custom
@@ -20,14 +19,14 @@ desired.
 
 Alternatively, there is a homebrew formula to install using homebrew:
 
-```
-brew install https://raw.githubusercontent.com/mivok/bear_backup/master/Formula/bear_backup.rb
+```sh
+brew install https://raw.githubusercontent.com/screamyao/bear_backup/master/Formula/bear_backup.rb
 ```
 
 The homebrew script also provides a launchctl module to back up every night at
-midnight to a dropbox directory. If you want to use this, run:
+midnight to `~/od/Backup/bear` directory. If you want to use this, run:
 
-```
+```sh
 brew service start bear_backup
 ```
 
@@ -35,8 +34,8 @@ brew service start bear_backup
 
 At a minimum, you need to specify a directory to back up to:
 
-```
-bear_backup.py ~/Dropbox/backups/bear
+```sh
+bear_backup.py ~/od/Backup/bear
 ```
 
 The script will grab all of your notes from bear and create individual
@@ -45,8 +44,8 @@ The script will grab all of your notes from bear and create individual
 If you want to remove any notes from an existing backup that have been deleted
 from bear, then you will also want to add the `-r` option:
 
-```
-bear_backup.py -r ~/Dropbox/backups/bear
+```sh
+bear_backup.py -r ~/od/Backup/bear
 ```
 
 This will clean up any notes in the backup directory that have been deleted
